@@ -7,3 +7,19 @@ services:
       - "5439:5432"
     volumes:
       - ./containers/createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+  repl:
+    image: clojure:openjdk-11-lein-2.9.1-slim-buster
+    command: lein repl :start :host 0.0.0.0 :port 39998
+    ports:
+      - 39998:39998
+    depends_on:
+      - postgres
+    volumes:
+      - .:/try-hugsql
+      - lib_data:/root/.m2/repository
+    working_dir: /try-hugsql
+    environment:
+      - DEV_DB_URL=jdbc:postgresql://postgres:5432/sample-dev?user=postgres&password=
+
+volumes:
+  lib_data:
