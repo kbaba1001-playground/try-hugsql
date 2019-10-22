@@ -7,6 +7,8 @@ services:
       - "5439:5432"
     volumes:
       - ./containers/createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+    environment:
+      - POSTGRES_PASSWORD=postgres
   # repl:
   #   image: clojure:openjdk-11-lein-2.9.1-slim-buster
   #   command: lein repl :start :host 0.0.0.0 :port 39998

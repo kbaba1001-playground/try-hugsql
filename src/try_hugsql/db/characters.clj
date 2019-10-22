@@ -2,6 +2,12 @@
   (:require [hugsql.core :as hugsql]))
 
 ; TODO jdbc で postgres に繋げられるようにする
+(def db
+  {:dbtype "postgres"
+   :dbname "sample-dev"
+   :port "5439"
+   :user "postgres"
+   :password "postgres"})
 
 ;; The path is relative to the classpath (not proj dir!),
 ;; so "src" is not included in the path.

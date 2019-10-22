@@ -1,10 +1,12 @@
 {
   "sqltools.connections": [
     {
-      "askForPassword": false,
       "database": "sample-dev",
       "dialect": "PostgreSQL",
+      "isActive": true,
+      "isConnected": true,
       "name": "dev",
+      "password": "postgres",
       "port": 5439,
       "server": "localhost",
       "username": "postgres"

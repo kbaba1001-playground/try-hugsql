@@ -7,11 +7,11 @@
 -- :doc Create characters table
 --  auto_increment and current_timestamp are
 --  H2 Database specific (adjust to your DB)
-create table characters (
-  id         integer auto_increment primary key,
+CREATE TABLE characters (
+  id         serial NOT NULL PRIMARY KEY,
   name       varchar(40),
   specialty  varchar(40),
-  created_at timestamp not null default current_timestamp
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 )
 
 /* ...snip... */
